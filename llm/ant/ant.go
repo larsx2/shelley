@@ -76,7 +76,12 @@ func ClaudeModelName(userName string) string {
 
 // TokenContextWindow returns the maximum token context window size for this service
 func (s *Service) TokenContextWindow() int {
-	return 200000
+	switch s.Model {
+	case Claude46Opus, Claude46Sonnet:
+		return 1000000
+	default:
+		return 200000
+	}
 }
 
 // maxOutputTokens returns the maximum allowed output tokens for the configured model.

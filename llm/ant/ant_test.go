@@ -67,6 +67,8 @@ func TestTokenContextWindow(t *testing.T) {
 		want  int
 	}{
 		{"default model", "", 200000},
+		{"Claude46Opus", Claude46Opus, 1000000},
+		{"Claude46Sonnet", Claude46Sonnet, 1000000},
 		{"Claude4Sonnet", Claude4Sonnet, 200000},
 		{"Claude45Sonnet", Claude45Sonnet, 200000},
 		{"Claude45Haiku", Claude45Haiku, 200000},
